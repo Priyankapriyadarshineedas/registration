@@ -1,0 +1,16 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+
+<h1>Dashboard:</h1>
+    {% if user.image %}
+        <img src="{{ user.image.url }}" alt="Profile Image" width="200" height="200">
+    {% endif %}
+     <h3>Name:{{ request.user.first_name }}</h3>
+    <h3>DOB:{{ request.user.date_of_birth }}</h3>
+    <h3>Gender:{{ request.user.gender }}</h3>
+
+<a href="{% url 'logout' %}" class="btn btn-dark">Logout</a>
+
+{% endblock %}
+
